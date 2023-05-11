@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>appointments</title>
+</head>
+<body>
+<h1>Appointments</h1>
+<a href="/appointment/add" >create appointment</a><br>
+<table border="1px">
+  <tr>
+    <th>id</th>
+    <th>date time</th>
+    <th>patient name</th>
+    <th>doctor name</th>
+      <th>action</th>
+  </tr>
+  <tr th:each="appointment : ${appointments}">
+    <td th:text="${appointment.id}"></td>
+    <td th:text="${#dates.format(appointment.dateTime, 'dd/MM/yyyy HH:mm:ss')}"></td>
+    <td th:if="${appointment.doctorId != null}" th:text="${appointment.doctorId.name}"></td>
+    <td th:if="${appointment.patientId != null}" th:text="${appointment.patientId.name}"></td>
+    <td><a th:href="@{/appointments/remove(id=${appointment.id})}">Remove</a></td>
+  </tr>
+</table>
+</body>
+</html>
