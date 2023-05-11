@@ -18,12 +18,12 @@ public class Appointment {
     @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     private Date dateTime;
 
-   // @Column(name = "patient_id")
     @ManyToOne
-    private Patient patientId;
+    //@Column(name = "patient_id")
+    private Patient patient;
 
-    //@Column(name = "doctor_id")
     @ManyToOne
-    private Doctor doctorId;
+    //@Column(name = "doctor_id")
+    private Doctor doctor;
 
 }
