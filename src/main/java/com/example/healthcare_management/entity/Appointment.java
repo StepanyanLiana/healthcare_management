@@ -19,11 +19,9 @@ public class Appointment {
     private Date dateTime;
 
     @ManyToOne
-    //@Column(name = "patient_id")
     private Patient patient;
 
     @ManyToOne
-    //@Column(name = "doctor_id")
     private Doctor doctor;
 
 }
