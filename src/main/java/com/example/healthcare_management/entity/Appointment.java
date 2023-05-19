@@ -15,7 +15,7 @@ public class Appointment {
     private int id;
 
     @Column(name = "date_time")
-    @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateTime;
 
     @ManyToOne
@@ -23,5 +23,8 @@ public class Appointment {
 
     @ManyToOne
     private Doctor doctor;
+    
+    @ManyToOne
+    private User user;
 
 }

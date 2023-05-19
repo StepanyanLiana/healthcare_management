@@ -18,9 +18,10 @@
   </tr>
   <tr th:each="appointment : ${appointments}">
     <td th:text="${appointment.id}"></td>
-    <td th:text="${#dates.format(appointment.dateTime, 'dd/MM/yyyy HH:mm:ss')}"></td>
+    <td th:text="${appointment.dateTime}"></td>
     <td th:if="${appointment.doctor != null}" th:text="${appointment.doctor.name}"></td>
     <td th:if="${appointment.patient != null}" th:text="${appointment.patient.name}"></td>
+    <td th:text="${appointment.user.name}"></td>
     <td><a th:href="@{/appointments/remove(id=${appointment.id})}">Remove</a></td>
   </tr>
 </table>
